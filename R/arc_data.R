@@ -108,7 +108,7 @@ arc_data <- function(asmbdat_path=getwd(),archive_path=NULL,...){
   
   
   data_dir_info %>%
-    purrr::pull(path) #%>%
+    pull(path) %>%
     purrr::walk( ~ utilscognigen::file_copy(from = .x, to = to_path))
   
   
