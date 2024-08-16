@@ -64,7 +64,7 @@ arc_data <- function(asmbdat_path=getwd(),archive_path=NULL,...){
   # check if archive exists. Create archive in data directory if it doesn't yet exist
   if (!file.exists(new_path)) {
     cli::cli_alert_info("created archive directory{.file {new_path}}")
-    fs::dir_create(new_path) 
+    fs::dir_create(new_path,mode="u=rwx,g=rwx,o=") 
   }
   
   
@@ -101,7 +101,7 @@ arc_data <- function(asmbdat_path=getwd(),archive_path=NULL,...){
   
   
   if (!file.exists(to_path)) {
-    fs::dir_create(to_path)
+    fs::dir_create(to_path,mode="u=rwx,g=rwx,o=")
     cli::cli_alert_success("You created new directory {.file {to_path}}")
   }
   
